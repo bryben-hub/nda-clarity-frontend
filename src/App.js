@@ -56,10 +56,9 @@ export default function NDAAnalyzer() {
     try {
       const formData = new FormData();
       formData.append('file', uploadedFile);
-      const response = await fetch('http://localhost:3001/api/create-payment', {
+      const response = await fetch('http://nda-clarity-backend-production.up.railway.app/api/create-payment', {
         method: 'POST',
-        body: formData
-      });
+        body: formDatahttps://nda-clarity-backend-production.up.railway.app      });
       if (!response.ok) throw new Error('Failed');
       const data = await response.json();
       setClientSecret(data.clientSecret);
@@ -73,7 +72,7 @@ export default function NDAAnalyzer() {
   const handlePaymentSuccess = async (paymentId) => {
     setAnalyzing(true);
     try {
-      const response = await fetch('http://localhost:3001/api/analyze-after-payment', {
+      const response = await fetch('http://nda-clarity-backend-production.up.railway.app/api/analyze-after-payment', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ paymentIntentId: paymentId })
