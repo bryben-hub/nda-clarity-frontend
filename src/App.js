@@ -3,7 +3,8 @@ import { Upload, FileText, CreditCard, CheckCircle, Shield, Clock, TrendingUp, A
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
-const stripePromise = loadStripe('pk_test_YOUR_STRIPE_KEY_HERE');
+const stripePromise = loadStripe('pk_test_51SFe3VGSXAViqFcQnsdax2I8fBUKfPaWfbl6cV4gU9EYsnwiSuOwxZoJQOOvEtlcWh1xOIzodkR2neqE85UQcQGo00O89tpobk
+');
 
 function PaymentForm({ clientSecret, onSuccess }) {
   const stripe = useStripe();
